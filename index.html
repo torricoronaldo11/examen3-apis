@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Examen 3er Parcial — Diseño 3</title>
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <div class="page">
+        <header class="page-header">
+            <header class="page-header">
+                <h1><i class="fas fa-user-edit"></i> REGISTRO DE CUENTA</h1>
+
+                <p class="welcome">
+                    👋 ¡Bienvenido(a)! Este sistema te permitirá registrar una cuenta paso a paso y visualizar datos en tiempo real obtenidos de diferentes APIs públicas.
+                    <br>Explora cada sección para conocer cómo funciona la integración de servicios web.
+                </p>
+            </header>
+
+        </header>
+
+
+        <div class="wizard-wrap">
+            <aside class="wizard-steps" id="steps">
+                <div class="step arrow active" data-step="1">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <div class="title">Configuración de cuenta</div>
+                        <div class="subtitle">Detalles de la cuenta</div>
+                    </div>
+                </div>
+
+                <div class="step arrow" data-step="2">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <div class="title">Configuración de pago</div>
+                        <div class="subtitle">Detalles de facturación</div>
+                    </div>
+                </div>
+
+                <div class="step arrow" data-step="3">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <div class="title">Acuerdo</div>
+                        <div class="subtitle">Política del sitio</div>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="wizard-main">
+                <div class="card" id="card">
+                    <div class="card-header" id="cardHeader">Configuración de cuenta</div>
+
+                    <form id="wizardForm" class="card-body" autocomplete="off">
+                        <label class="flabel">Correo electrónico
+              <input id="email" type="email" placeholder="Tu correo electrónico" />
+            </label>
+
+                        <label class="flabel">Contraseña
+              <input id="password" type="password" placeholder="Contraseña" />
+            </label>
+
+                        <label class="flabel">Confirmar contraseña
+              <input id="confirm" type="password" placeholder="Repite la contraseña" />
+            </label>
+
+                        <div id="apiResults" class="api-results" aria-live="polite"></div>
+                        <div class="actions">
+                            <button id="btnBack" class="btn btn-secondary">Atrás</button>
+                            < <div id="card-body"></div>
+
+                        <button id="btn-prev">Anterior</button>
+                        <button id="btn-next">Siguiente</button>
+
+                        <!-- 👇 Asegúrate de que tu script esté al final -->
+                        <script type="module" src="./js/app.js"></script>
+</body>
+
+</html>

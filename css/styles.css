@@ -1,0 +1,378 @@
+/* reset y variables */
+
+ :root {
+    --bg: #e2e6e96b;
+    /* fondo gris suave */
+    --muted: #15324d;
+    /* tono azul texto secundario */
+    --panel-bg: #e9ecf0;
+    /* azul panel lateral */
+    --card-bg: linear-gradient(180deg, #4df2a9, #3ad18f);
+    /* tarjeta verde con degradado */
+    --accent: #134196;
+    /* celeste botones / header */
+    --accent-dark: #17191a;
+    /* texto oscuro */
+    --shadow: 0 6px 15px rgba(95, 66, 66, 0.2);
+    /* sombra general */
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 8px;
+    font-family: Inter, "Segoe UI", Roboto, Arial, sans-serif;
+    background: linear-gradient(180deg, #e6e7e8, #b8c2cc);
+    color: #181414;
+}
+
+
+/* layout */
+
+.page {
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 18px
+}
+
+.page-header h1 {
+    margin: 0;
+    color: var(--accent-dark)
+}
+
+.page-header p {
+    margin: 0px 0 18px;
+    color: var(--muted)
+}
+
+.wizard-wrap {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start
+}
+
+
+/* STEPS (left) - arrow look */
+
+.wizard-steps {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.step {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all .12s ease;
+    color: #15181d;
+    background: transparent;
+}
+
+
+/* number box */
+
+.step-num {
+    width: 38px;
+    height: 38px;
+    border-radius: 6px;
+    background: #13c3cf;
+    color: var(--accent-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+    flex: 0 0 38px;
+}
+
+
+/* text lines */
+
+.step .title {
+    font-weight: 700
+}
+
+.step .subtitle {
+    font-size: .85rem;
+    color: var(--muted)
+}
+
+
+/* arrow right (pseudo) */
+
+.step.arrow::after {
+    content: "";
+    position: absolute;
+    right: -22px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 28px solid transparent;
+    border-bottom: 28px solid transparent;
+    border-left: 22px solid rgba(0, 0, 0, 0.03);
+}
+
+
+/* PASOS LATERALES (ESTILO CON FLECHAS) */
+
+.step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1px;
+    padding: 1px 10px;
+    background-color: #553e3ebe;
+    /* gris por defecto */
+    color: #f7efef;
+    border-radius: 2px 0 0 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.step .title {
+    font-weight: bold;
+}
+
+.step .subtitle {
+    font-size: 0.85rem;
+    color: #f7f4f4;
+}
+
+.step::after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-bottom: 25px solid transparent;
+    border-left: 15px solid #141414;
+    /* color del fondo gris */
+    transition: border-left-color 0.3s ease;
+}
+
+
+/* PASO ACTIVO (color celeste) */
+
+.step.active {
+    background-color: #0ea3d4;
+    color: #fff;
+}
+
+.step.active::after {
+    border-left-color: #1eaddc;
+    /* flecha azul */
+}
+
+.step.active .subtitle {
+    color: #e0f7ff;
+}
+
+
+/* CARD (right) */
+
+.wizard-main {
+    flex: 1
+}
+
+.card {
+    background: linear-gradient(180deg, #1377c9, #f8f4f4);
+    /* leve degradado verde */
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(192, 212, 12, 0.2), inset 0 0 8px rgba(248, 247, 243, 0.3);
+    /* sombra externa e interna */
+    border: 2px solid rgba(202, 152, 15, 0.89);
+    /* borde con brillo */
+    transition: all 0.3s ease;
+}
+
+
+/* efecto al pasar el mouse */
+
+.card:hover {
+    box-shadow: 0 0 25px rgba(32, 207, 193, 0.6), inset 0 0 10px rgba(212, 179, 179, 0.4);
+    transform: translateY(-2px);
+}
+
+
+/* card header (big blue bar) */
+
+.card-header {
+    background: var(--accent);
+    color: #fcf9f9;
+    padding: 14px 18px;
+    font-weight: 700;
+    font-size: 1rem;
+    border-radius: 0 0 6px 6px;
+    margin: 0 0 8px 0;
+}
+
+
+/* form body */
+
+.card-body {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    position: relative
+}
+
+.flabel {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: #0a0a0a;
+    font-size: .95rem
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    margin-top: 8px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #0e0e0e;
+    background: linear-gradient(180deg, #fefefe, #e6e6e6);
+    min-width: 380px;
+    max-width: 520px;
+    box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(255, 255, 255, 0.4);
+    transition: all 0.25s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #1eaddc;
+    box-shadow: 0 0 8px rgba(30, 173, 220, 0.6), inset 0 1px 4px rgba(255, 255, 255, 0.5);
+}
+
+
+/* actions: Next bottom-right like image */
+
+.actions {
+    position: static;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn {
+    padding: 8px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(180deg, #2a8ef7, #1362d3);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(180deg, #3aa1ff, #0f4aa6);
+    box-shadow: 0 0 12px rgba(0, 153, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: linear-gradient(180deg, #f2f2f2, #b8b8b8);
+    color: #111;
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    transform: translateY(-2px);
+}
+
+
+/* responsive adjustments */
+
+@media (max-width:880px) {
+    .wizard-wrap {
+        flex-direction: column
+    }
+    .wizard-steps {
+        flex-direction: row;
+        width: 100%;
+        overflow: auto;
+        padding-bottom: 6px
+    }
+    .step {
+        min-width: 220px
+    }
+    input {
+        min-width: 100%
+    }
+    .actions {
+        position: static;
+        justify-content: flex-end;
+        margin-top: 8px
+    }
+}
+
+.page-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    color: var(--accent-dark);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.page-header h1 i {
+    color: var(--accent);
+    font-size: 1.6rem;
+}
+
+.page-header p {
+    margin-top: 6px;
+    color: var(--muted);
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.page-header p i {
+    color: var(--accent);
+    margin-right: 6px;
+}
+
+
+/* Mensaje de bienvenida */
+
+.page-header .welcome {
+    margin-top: 14px;
+    background: #e9f8ff;
+    border-left: 4px solid var(--accent);
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    color: #0d1a26;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    max-width: 700px;
+}
+
+.card:hover {
+    filter: brightness(1.05);
+}
