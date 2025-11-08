@@ -1,6 +1,4 @@
-// services/catService.js
-
-// Esta función obtiene una imagen aleatoria de un gato desde la API pública
+// services/catService.j
 export async function fetchCat() {
     try {
         const response = await fetch("https://api.thecatapi.com/v1/images/search");
@@ -9,7 +7,7 @@ export async function fetchCat() {
         }
 
         const data = await response.json();
-        // Devuelve la URL de la imagen del gato
+
         return data[0].url;
     } catch (error) {
         console.error("Error en fetchCat:", error);

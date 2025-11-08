@@ -14,9 +14,7 @@ console.log("✅ app.js cargado correctamente");
 
 
 
-// ============================
-// VARIABLES GLOBALES
-// ============================
+
 let pasoActual = 1;
 const PASOS_TOTAL = 8;
 
@@ -24,14 +22,12 @@ const cardBody = document.getElementById("card-body");
 const btnNext = document.getElementById("btn-next");
 const btnPrev = document.getElementById("btn-prev");
 
-// ============================
-// FUNCIÓN PRINCIPAL
-// ============================
+
 async function renderPaso(n) {
     try {
         cardBody.innerHTML = "";
 
-        // Paso 1 — Cuenta
+
         if (n === 1) {
             cardBody.innerHTML = `
         <label>Correo electrónico:
@@ -44,10 +40,7 @@ async function renderPaso(n) {
           <input id="inp_confirm" type="password" placeholder="Repite la contraseña">
         </label>
       `;
-        }
-
-        // Paso 2 — Estimar edad (Agify)
-        else if (n === 2) {
+        } else if (n === 2) {
             cardBody.innerHTML = `
         <label>Nombre:
           <input id="inp_name_age" type="text" placeholder="Ej: Carlos">
@@ -61,10 +54,7 @@ async function renderPaso(n) {
                 const r = await fetchAgify(name);
                 document.getElementById("res_age").innerHTML = `<p>Edad estimada: ${r.age || "Sin datos"}</p>`;
             });
-        }
-
-        // Paso 3 — Género
-        else if (n === 3) {
+        } else if (n === 3) {
             cardBody.innerHTML = `
         <label>Nombre:
           <input id="inp_name_gen" type="text" placeholder="Ej: Andrea">
@@ -78,10 +68,7 @@ async function renderPaso(n) {
                 const r = await fetchGenderize(name);
                 document.getElementById("res_gen").innerHTML = `<p>Género: ${r.gender || "Sin datos"}</p>`;
             });
-        }
-
-        // Paso 4 — Nacionalidad
-        else if (n === 4) {
+        } else if (n === 4) {
             cardBody.innerHTML = `
         <label>Nombre:
           <input id="inp_name_nat" type="text" placeholder="Ej: Sofía">
@@ -100,28 +87,16 @@ async function renderPaso(n) {
                     .join(", ") || "Sin datos";
                 document.getElementById("res_nat").innerHTML = `<p>Posibles países: ${countries}</p>`;
             });
-        }
-
-        // Paso 5 — Chuck Norris
-        else if (n === 5) {
+        } else if (n === 5) {
             const joke = await fetchChuck();
             cardBody.innerHTML = `<p>${joke}</p>`;
-        }
-
-        // Paso 6 — Cat Fact
-        else if (n === 6) {
+        } else if (n === 6) {
             const fact = await fetchCatFact();
             cardBody.innerHTML = `<p>${fact}</p>`;
-        }
-
-        // Paso 7 — Dog
-        else if (n === 7) {
+        } else if (n === 7) {
             const img = await fetchDog();
             cardBody.innerHTML = `<img src="${img}" width="250" style="border-radius:10px;">`;
-        }
-
-        // Paso 8 — Usuario Aleatorio
-        else if (n === 8) {
+        } else if (n === 8) {
             const u = await fetchRandomUser();
             cardBody.innerHTML = `
         <p>Usuario: ${u.name} (${u.email})</p>
@@ -135,9 +110,7 @@ async function renderPaso(n) {
     }
 }
 
-// ============================
-// BOTONES
-// ============================
+
 document.addEventListener("DOMContentLoaded", () => {
     const btnNext = document.getElementById("btn-next");
     const btnPrev = document.getElementById("btn-prev");
@@ -146,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let pasoActual = 1;
     const PASOS_TOTAL = 8;
 
-    // Tus funciones y eventos:
+
     btnNext.addEventListener("click", async() => {
         if (pasoActual === 1) {
             const email = document.getElementById("inp_email").value.trim();

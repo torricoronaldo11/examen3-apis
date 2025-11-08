@@ -1,4 +1,3 @@
-// js/services/btcService.js
 import { PriceModel } from "../models.js";
 export async function fetchBTC() {
     const res = await fetch("https://api.coindesk.com/v1/bpi/currentprice.json");
