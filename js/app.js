@@ -142,6 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (pasoActual > 1) {
             pasoActual--;
             renderPaso(pasoActual);
+
         }
     });
 

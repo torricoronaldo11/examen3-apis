@@ -376,3 +376,75 @@ input:focus {
 .card:hover {
     filter: brightness(1.05);
 }
+
+#paso1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+}
+
+#paso1 input {
+    width: 80%;
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+#paso1 button {
+    margin-top: 10px;
+}
+
+.paso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+#formCuenta {
+    background: linear-gradient(to bottom, #4a90e2, #a1c4fd);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 90%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formCuenta input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.botones-form {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.botones-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.botones-form button:hover {
+    background-color: #0056b3;
+}

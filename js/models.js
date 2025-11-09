@@ -1,4 +1,3 @@
-// js/models.js
 export class UserModel {
     constructor({ name = "", email = "", phone = "", picture = "" } = {}) {
         this.name = name;

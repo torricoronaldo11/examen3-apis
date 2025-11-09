@@ -1,5 +1,7 @@
-// services/catService.j
-export async function fetchCat() {
+export async function fetchCat()
+
+
+{
     try {
         const response = await fetch("https://api.thecatapi.com/v1/images/search");
         if (!response.ok) {
