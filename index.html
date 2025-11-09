@@ -54,35 +54,28 @@
                 <div class="card" id="card">
                     <div class="card-header" id="cardHeader">Configuración de cuenta</div>
 
+                    <form id="wizardForm" class="card-body" autocomplete="off">
+                        <label class="flabel">Correo electrónico
+              <input id="email" type="email" placeholder="Tu correo electrónico" />
+            </label>
 
-                    <div id="paso1" class="paso">
-                        <h3>Configuración de cuenta</h3>
+                        <label class="flabel">Contraseña
+              <input id="password" type="password" placeholder="Contraseña" />
+            </label>
 
-                        <form id="formCuenta">
-                            <label for="inp_email">Correo electrónico</label>
-                            <input type="email" id="inp_email" placeholder="Tu correo electrónico" />
+                        <label class="flabel">Confirmar contraseña
+              <input id="confirm" type="password" placeholder="Repite la contraseña" />
+            </label>
 
-                            <label for="inp_pass">Contraseña</label>
-                            <input type="password" id="inp_pass" placeholder="Contraseña" minlength="6" />
-
-                            <label for="inp_confirm">Confirmar contraseña</label>
-                            <input type="password" id="inp_confirm" placeholder="Repite la contraseña" />
-
-
-
-                    </div>
-                    </form>
-                </div>
-
-                <div id="apiResults" class="api-results" aria-live="polite"></div>
-                <div class="actions">
+                        <div id="apiResults" class="api-results" aria-live="polite"></div>
+                        <div class="actions">
 
 
-                    <button id="btn-prev">Anterior</button>
-                    <button id="btn-next">Siguiente</button>
+                            <button id="btn-prev">Anterior</button>
+                            <button id="btn-next">Siguiente</button>
 
 
-                    <script type="module" src="./js/app.js"></script>
+                            <script type="module" src="./js/app.js"></script>
 </body>
 
 </html>
